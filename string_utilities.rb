@@ -3,7 +3,7 @@ require 'digest/md5'
 require './paint.rb'
 
 
-class ColorUtilities
+class StringUtilities
 
 
   # It gets the initial string from the user
