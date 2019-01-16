@@ -2,8 +2,8 @@
 require 'digest/md5'
 require './paint.rb'
 
-# Math class is included in the Ruby Core
-include Math
+# The Math class is already included in the Ruby Core, you only need to use it
+# include Math
 
 
 class StringUtilities
@@ -68,7 +68,7 @@ class StringUtilities
   end
 
 
-  # ---------------------------------------------------- * * * Specific Functionalities * * * ---------------------------------------------------------------------
+  # -------------------------------------- * * * Specific Methods * * * ------------------------------------------------
 
 
   # It generates a unique hexadecimal color from a provided string
@@ -141,7 +141,7 @@ class StringUtilities
     return rgb_palette_color
   end
 
-
+  # It assigns a saturation and a value depending of the patient id (max combinations = 2500)
   def self.assign_sat_and_val_from_id(patient_id)
     # sat takes values from 50 until 100
     # val takes values from 50 until 99
@@ -169,6 +169,7 @@ class StringUtilities
 
         else # Bigger than 2 500 AND not multiple of 2 500 (usual)
 
+          # Recursive call
           return assign_sat_and_val_from_id(patient_id.to_i / 2500)
 
         end
@@ -177,13 +178,13 @@ class StringUtilities
 
     end
 
-    # Returns the saturation and value
+    # Returns the saturation and the value
     return sat, val
 
   end
 
 
-  # ---------------------------------------------------- * * * Common Functionalities * * * ----------------------------------------------------------------------
+  # --------------------------------------- * * * Common Met------------------------------------------------------------
 
 
   # It converts an HSV color into a RGB color
