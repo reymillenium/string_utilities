@@ -3,7 +3,7 @@ require 'digest/md5'
 require './paint.rb'
 
 # The Math class is already included in the Ruby Core, you only need to use it
-# include Math
+include Math
 
 
 class StringUtilities
@@ -24,7 +24,7 @@ class StringUtilities
     printf "Your unique color associated to your name is this: #{unique_hex_color} and it looks like this: " + Paint[full_name, unique_hex_color] + "\n"
   end
 
-  # It obtaiins a string from the user to test the random rgb color generation
+  # It obtains a string from the user to test the random rgb color generation
   def self.test_random_color
     # Asks the name to the user
     print "Please type any string:"
@@ -60,11 +60,11 @@ class StringUtilities
     # hex_palette_color = rgb_to_hex(rgb_palette_color)
 
     # Gets directly the hex color from the patient id
-    hex_palette_color = rgb_to_hex(get_rgb_palette_color_from_id(patient_id))
+    hex_palette_color = rgb_to_hex(get_rgb_palette_color_from_id(patient_id)).to_s
 
     # Ir works with rgb and hex color formats
     # printf "Hello #{user_name} with id = #{patient_id}. Your palette color is: #{rgb_palette_color} and it looks like this: " + Paint["000000", rgb_palette_color] + "\n"
-    printf "Hello #{user_name} with id = #{patient_id}. Your palette color is: #{hex_palette_color} and it looks like this: " + Paint["000000", hex_palette_color.to_s] + "\n"
+    printf "Hello #{user_name} with id = #{patient_id}. Your palette color is: #{hex_palette_color} and it looks like this: " + Paint["000000", hex_palette_color] + "\n"
   end
 
 
@@ -211,4 +211,3 @@ class StringUtilities
 
 
 end
-
